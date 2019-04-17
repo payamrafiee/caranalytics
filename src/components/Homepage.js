@@ -8,7 +8,7 @@ import { reset, setPrice, setType } from '../store/actions/filters';
 
 import Footer from '../components/Footer'
 import Checkbox from './Checkbox';
-import Chart from './Chart2';
+import Chart from './Chart';
 
 class Homepage extends Component {
 
@@ -28,6 +28,7 @@ class Homepage extends Component {
         <Grid columns={2} stackable >
           <Grid.Column>
             <Segment>
+
               <Header as='h4'  style={{ paddingBottom: '1rem' }}>Price:</Header>
               <div style={{padding: '0 1rem 0 1rem'}}>
                 <InputRange
@@ -38,6 +39,7 @@ class Homepage extends Component {
                   onChange={value => this.props.setPrice(value)}
                 />
               </div>
+
               <Header as='h4'  style={{ paddingTop: '2rem' }}>Type:</Header>
               <Grid>
                 <Grid.Column>
@@ -58,7 +60,7 @@ class Homepage extends Component {
                 <Grid.Column>
                   <Checkbox label='USA' onChange={this._onCheckboxClick}/>
                   <Checkbox label='Germany' onChange={this._onCheckboxClick}/>
-                  <Checkbox label='Jepan' onChange={this._onCheckboxClick}/>
+                  <Checkbox label='Japan' onChange={this._onCheckboxClick}/>
                   <Checkbox label='Italy' onChange={this._onCheckboxClick}/>
                 </Grid.Column>
               </Grid>
