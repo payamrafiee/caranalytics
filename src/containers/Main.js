@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, withRouter, Switch } from 'react-router-dom'
 import { connect } from 'react-redux';
-import Homepage from '../components/Homepage';
+import Home from './Home';
 
 const Main = () => (
   <div>
     <Switch>
-      <Route exac path='/' render={props => <Homepage {...props} />}  />
+      <Route exac path='/' render={props => <Home {...props} />}  />
     </Switch>
   </div>
 )
