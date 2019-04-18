@@ -1,4 +1,4 @@
-import { RESET, SET_PRICE, SET_TYPE } from '../actionTypes'
+import { RESET, SET_PRICE, SET_TYPE, SET_COUNTRY } from '../actionTypes'
 
 const INITIAL_STATE = {
   price: {
@@ -15,6 +15,17 @@ const INITIAL_STATE = {
     truck: false,
     van: false,
     minivan: false
+  },
+  country: {
+    usa: true,
+    german: true,
+    japan: true,
+    italy: true,
+    britannia: true,
+    sweden: true,
+    southkorea: true,
+    china: true
+
   }
 }
 
@@ -29,6 +40,11 @@ export default (state=INITIAL_STATE, action) => {
         return {
           ...state,
           type: {...state.type, ...action.payload}
+        }
+      case SET_COUNTRY:
+        return {
+          ...state,
+          country: {...state.country, ...action.payload}
         }
       case RESET:
         return state = INITIAL_STATE

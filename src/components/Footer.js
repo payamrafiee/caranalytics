@@ -3,10 +3,16 @@ const date = new Date()
 
 const Footer = () => {
   return (
-    <div style={{ textAlign: 'center', marginTop: '2rem'}}>
+    <div style={styles}>
       <p>All rights reserved {date.getFullYear()}</p>
     </div>
   )
+}
+
+const styles = {
+  textAlign: 'center',
+  marginTop: '6rem',
+  marginBottom: '1rem',
 }
 
 export default Footer
