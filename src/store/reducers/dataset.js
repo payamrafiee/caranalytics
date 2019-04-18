@@ -1,3 +1,3 @@
-import dataset from './cars_info.json'
+import dataset from './cars.json'
 
 export default () => dataset
