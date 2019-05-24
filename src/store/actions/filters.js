@@ -1,20 +1,18 @@
-import { RESET, SET_PRICE, SET_TYPE, SET_COUNTRY } from '../actionTypes';
-
-export const setPrice = (value) => ({
-  type: SET_PRICE,
-  payload: value
-})
-
-export const setType = (type) => ({
-  type: SET_TYPE,
-  payload: type
-})
-
-export const setCountry = (country) => ({
-  type: SET_COUNTRY,
-  payload: country
-})
+import { instance } from '../../services/api';
+import { RESET, FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_FAIL } from '../actionTypes';
 
 export const reset = () => ({
   type: RESET,
-})
+});
+
+export const setFilters = filters => async dispatch => {
+  dispatch({ type: FETCH_DATA });
+  try {
+    const data = await instance.post('posts', {
+      data: filters,
+    });
+    return dispatch({ type: FETCH_DATA_SUCCESS, payload: data });
+  } catch (e) {
+    return dispatch({ type: FETCH_DATA_FAIL, payload: e });
+  }
+};
